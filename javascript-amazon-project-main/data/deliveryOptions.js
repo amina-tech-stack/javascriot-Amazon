@@ -14,3 +14,10 @@ export  const deliveryOptions = [
     priceCents:999
 }
 ];
+export function getDeliveryOption (deliveryOptionId){
+    let deliveryOption = deliveryOptions.find(option => option.id === deliveryOptionId);
+
+    // If deliveryOption is not found, skip this item
+    if (!deliveryOption) return deliveryOptions[0];
+    else return deliveryOption;
+}
